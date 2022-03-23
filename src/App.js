@@ -7,6 +7,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Register from './components/Register';
 import Login from './components/Login';
+// import Navbar from './components/Navbar';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Routes>
             <Route
               exact
+              activeClassName="active"
               path="/"
               element={
                 <Landingpage/>
@@ -23,6 +25,7 @@ function App() {
             />
             <Route
               exact
+              activeClassName="active"
               path="/about"
               element={
                 <About/>
@@ -30,6 +33,7 @@ function App() {
             />
             <Route
               exact
+              activeClassName="active"
               path="/contact"
               element={
                 <Contact/>
@@ -37,6 +41,7 @@ function App() {
             />
             <Route
               exact
+              activeClassName="active"
               path="/register"
               element={
                 <Register/>
@@ -44,6 +49,7 @@ function App() {
             />
             <Route
               exact
+              activeClassName="active"
               path="/login"
               element={
                 <Login/>

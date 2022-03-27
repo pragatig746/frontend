@@ -2,8 +2,11 @@ import Navbar from "./Navbar";
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router";
 import pic from '../images/pic.jpg'
+import alertContext from "../context/alert/alertContext";
 
 const Register = () => {
+  // const context = useContext(alertContext);
+  // const {showAlert, setdisplay} = context;
   const navigate = useNavigate();
   const [credentials, setcredentials] = useState({
     username: "",
@@ -13,8 +16,6 @@ const Register = () => {
     fname: "",
     lname: "",
   });
-  // const aContext = useContext(alertContext);
-  // const { showAlert } = aContext;
 
   const handleChange = (e) => {
     setcredentials({ ...credentials, [e.target.name]: e.target.value });
@@ -36,16 +37,16 @@ const Register = () => {
         last_name: credentials.lname
       }),
     });
+    console.log(response);
     const json = await response.json();
     console.log(json);
-     if (!json.success) {
-//       showAlert({ type: "danger", msg: json.error });
-     } else {
-       // localStorage.setItem("token", json.authtoken);
-       setcredentials({ name: "", email: "", password: "" });
-       navigate("/login");
-//       showAlert({ type: "success", msg: "Signed up" });
-     }
+    if(response.ok)
+      navigate("/login");
+    else {
+      // setdisplay("block");
+      // showAlert({ type: "success", msg: "Successfully Signed up" });
+      console.log({status: response.status, message: response.statusText});
+    }
     // if (!json.success) {
     //   showAlert({ type: "danger", msg: json.error });
     // } else {

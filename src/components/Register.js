@@ -25,6 +25,7 @@ const Register = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "Access-Control-Request-Headers": "http://127.0.0.1:3000/"
       },
       body: JSON.stringify({
         username: credentials.username,
@@ -37,14 +38,14 @@ const Register = () => {
     });
     const json = await response.json();
     console.log(json);
-    // if (!json.success) {
-    //   showAlert({ type: "danger", msg: json.error });
-    // } else {
-    //   // localStorage.setItem("token", json.authtoken);
-    //   setcredentials({ name: "", email: "", password: "" });
-    //   navigate("/expense");
-    //   showAlert({ type: "success", msg: "Signed up" });
-    // }
+     if (!json.success) {
+//       showAlert({ type: "danger", msg: json.error });
+     } else {
+       // localStorage.setItem("token", json.authtoken);
+       setcredentials({ name: "", email: "", password: "" });
+       navigate("/login");
+//       showAlert({ type: "success", msg: "Signed up" });
+     }
   };
   return (
     <div className="register-main">
@@ -53,7 +54,7 @@ const Register = () => {
       <div className="register">
       <form onSubmit={handleSubmit}>
       <div className="mb-3">
-          <label for="username" className="col-form-label">
+          <label htmlFor="username" className="col-form-label">
             Username
           </label>
             <input
@@ -66,7 +67,7 @@ const Register = () => {
             />
         </div>
         <div className="mb-3">
-          <label for="exampleFormControlInput1" className="form-label">
+          <label htmlFor="exampleFormControlInput1" className="form-label">
             Email address
           </label>
           <input
@@ -79,7 +80,7 @@ const Register = () => {
           />
         </div>
         <div className="mb-3">
-          <label for="fname" className="col-form-label">
+          <label htmlFor="fname" className="col-form-label">
             First name
           </label>
             <input
@@ -92,7 +93,7 @@ const Register = () => {
             />
         </div>
         <div className="mb-3">
-          <label for="lname" className="col-form-label">
+          <label htmlFor="lname" className="col-form-label">
             Last name
           </label>
             <input
@@ -105,7 +106,7 @@ const Register = () => {
             />
         </div>
         <div className="mb-3">
-          <label for="inputPassword" className="col-form-label">
+          <label htmlFor="inputPassword" className="col-form-label">
             Password
           </label>
             <input
@@ -118,7 +119,7 @@ const Register = () => {
             />
         </div>
         <div className="mb-3">
-          <label for="inputPassword" className="col-form-label">
+          <label htmlFor="inputPassword" className="col-form-label">
             Password2
           </label>
             <input

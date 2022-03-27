@@ -46,6 +46,14 @@ const Register = () => {
        navigate("/login");
 //       showAlert({ type: "success", msg: "Signed up" });
      }
+    // if (!json.success) {
+    //   showAlert({ type: "danger", msg: json.error });
+    // } else {
+    //   // localStorage.setItem("token", json.authtoken);
+    //   setcredentials({ name: "", email: "", password: "" });
+    //   navigate("/expense");
+    //   showAlert({ type: "success", msg: "Signed up" });
+    // }
   };
   return (
     <div className="register-main">

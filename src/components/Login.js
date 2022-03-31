@@ -33,11 +33,19 @@ const Login = () => {
     } else {
       //Save the authtoken and redirect
       localStorage.setItem('token', json.access);
-      console.log(localStorage.getItem('token'));
-      navigate("/");
+      const response1 = await fetch("http://127.0.0.1:8000/detail/", {
+      method: "GET",
+      headers: {
+        "Authorization":`Bearer ${localStorage.getItem('token')}`,
+        "Access-Control-Request-Headers": "http://127.0.0.1:3000/"
+      }
+    });
+    const json1 = await response1.json();
+    console.log(json1);
+    navigate("/profile")
+
     }
-    setcredentials({ email: "", password: "" });
-    // setcredentials({ username: "", password: "" });
+    
   };
   return (
     <div className="login-main">

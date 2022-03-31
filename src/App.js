@@ -7,6 +7,9 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Register from './components/Register';
 import Login from './components/Login';
+import Home from './components/Home';
+import Profile from './components/Profile';
+import Logout from './components/Logout';
 // import Navbar from './components/Navbar';
 
 
@@ -53,6 +56,30 @@ function App() {
               path="/login"
               element={
                 <Login/>
+              }
+            />
+            <Route
+              exact
+              activeClassName="active"
+              path="/home"
+              element={
+                <Home/>
+              }
+            />
+            <Route
+              exact
+              activeClassName="active"
+              path="/profile"
+              element={
+                <Profile/>
+              }
+            />
+            <Route
+              exact
+              activeClassName="active"
+              path="/logout"
+              element={
+                <Logout/>
               }
             />
           </Routes>

@@ -23,7 +23,7 @@ const Home = () => {
   const youtube = async() =>{
       await repos();
       console.log(obj)
-      const YOUTUBE_API_KEY = "AIzaSyA78Bfr50t93zRCpnypkxEUulcpGFdgIA0"
+      const YOUTUBE_API_KEY = " "
       for(let k in obj)
       {
           console.log("Ready to get Youtube data!");

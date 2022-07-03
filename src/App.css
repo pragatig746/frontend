@@ -25,12 +25,22 @@
   font-family: 'League Spartan', sans-serif;
 }
 
-.navbar-nav > li{
+.nav-link{
   padding-left: 4vmin;
   padding-right: 4vmin;
   font-size: 3vmin;
-  color: white;
+  color: rgba(255,255,255,.55);
   font-family: 'League Spartan', sans-serif;
+}
+
+.nav-link:hover, .nav-link:active {
+  color: rgba(255,255,255,0.8);
+  font-size: 3.2vmin;
+}
+
+.logoutbtn {
+  background-color: transparent;
+  border: none;
 }
 
 #lastlink {
@@ -113,122 +123,93 @@
 }
 
 .register-main, .login-main {
-  background-color: #343a40;
-  height: 100vh;
+  background-image: url('https://media.istockphoto.com/photos/purple-defocused-blurred-motion-abstract-background-picture-id1273929462?k=20&m=1273929462&s=612x612&w=0&h=jJ0xkuDVJQMp6YwnAiqbtM8nwid36M97VIFxCP_sKCE=');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vmin;
 }
-
-.login {
-  box-shadow: 5px 10px 18px whitesmoke;
-  
-}
-
-.login:hover {
-  transform: scale(1.1);
-}
-
-.register{
-  width: 70vmin;
-  float: right;
-  /* margin: auto; */
-  margin-top: 4vmin;
-  margin-right: 35vmin;
-  margin-bottom: 3vmin;
-  background-color: #9b5de5;
-  padding: 2vmin;
-  border-radius: 2vmin;
-  color: beige;
-  font-size: 2vmin;
-}
-
-.login {
-  width: 70vmin;
+ 
+         
+.register-main button, .login-main button{
+  background-image: linear-gradient(to right, #9D50BB 0%, #6E48AA  51%, #9D50BB  100%);
   margin: auto;
-  margin-top: 15vmin;
-  margin-bottom: 3vmin;
-  background-color: #9b5de5;
-  padding: 4vmin;
-  border-radius: 2vmin;
-  color: beige;
-  font-size: 2.5vmin;
-}
-.register button, .login button {
-  align-items: center;
-  appearance: none;
-  background-color: #fff;
-  border-radius: 24px;
-  border-style: none;
-  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
-  box-sizing: border-box;
-  color: #3c4043;
-  cursor: pointer;
-  display: inline-flex;
-  margin: auto;
-  fill: currentcolor;
-  font-family: "Google Sans",Roboto,Arial,sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  height: 48px;
-  display: flex;
-  justify-content: center;
-  letter-spacing: .25px;
-  line-height: normal;
-  max-width: 100%;
-  overflow: visible;
-  padding: 2px 24px;
-  position: relative;
+  margin-top: 3.5vmin;
+  padding: 10px 30px;
   text-align: center;
-  text-transform: none;
-  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: auto;
-  will-change: transform,opacity;
-  z-index: 0;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border: none;
+  border-radius: 4vmin;
+  display: block;
 }
 
-.login button {
-  font-size: large;
+.register-main button:hover, .login-main button:hover{
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }
 
-.register button:hover, .login button:hover {
-  background: #F6F9FE;
-  color: #174ea6;
+.register-main .card, .login-main .card {
+  top: 4.5vmin;
+  height: 81.5vmin;
+  padding: 2vmin;
+  margin: auto;
+  width: 78vmin;
+  border-radius: 10px;
+  background-color: rgb(250, 249, 246);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.register button:active, .login button:active {
-  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
-  outline: none;
+.login-main .card {
+  top: 10vmin;
+  height: 47vmin; 
 }
 
-.register button:focus, .login button:focus {
-  outline: none;
-  border: 2px solid #4285f4;
+.register-main .card form h1, .login-main .card form h1 {
+  text-align: center;
 }
 
-.register button:not(:disabled), .login button:not(:disabled) {
-  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+.register-main .card form, .login-main .card form {
+  margin: 0.5vmin 12vmin;
 }
 
-.register button:not(:disabled):hover, .login button:not(:disabled):hover {
-  box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+.register-main .card .form-item, .login-main .card .form-item {
+  display: flex;
+  flex-direction: column;
+
 }
 
-.register button:not(:disabled):focus, .login button:not(:disabled):focus {
-  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+.register-main .card .form-item label, .login-main .card .form-item label {
+  color: #333;
+  font-size: 2vmin;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
 
-.register button:not(:disabled):active, .login button:not(:disabled):active {
-  box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+.register-main .card .form-item input, .login-main .card .form-item input {
+  border-radius: 2.5vmin;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: none;
+  background-color: rgb(250, 249, 246);
+
 }
 
-.register button:disabled, .login button:disabled {
-  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+.about-main {
+  background-image: url('images/about-bg.png');
+  height: 80vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
 }
 
-.register-main img, .login-main img {
-  margin-top: 8vmin;
-  margin-left: 28vmin;
-  width: 60vmin;
-  height: 70vmin;
+.details .card {
+  top: 65vmin;
+  height: 25vmin;
+  margin: 0 1.5vmin;
+  background-color: #423078;
+  color: white;
+  box-shadow: rgba(55, 59, 61, 0.847) 0px 7px 29px 0px;
 }

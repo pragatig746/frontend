@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-
+import Navbar from './Navbar'
 const Home = () => {
   let obj={}
   const repos = async () => {
@@ -49,6 +49,7 @@ const Home = () => {
   }
   return (
     <div>
+      <Navbar visibility="1"/>
       <button onClick={youtube}>Click</button>
       <form onSubmit={handleSubmit} className="form-inline d-flex justify-content-center md-form form-sm mt-0">
         <i className="fas fa-search" aria-hidden="true"></i>

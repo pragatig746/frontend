@@ -1,8 +1,8 @@
-import Navbar from "./Navbar";
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router";
-import pic from '../images/pic.jpg'
+import { Link } from "react-router-dom";
 import alertContext from "../context/alert/alertContext";
+import Navbar from "./Navbar";
 
 const Register = () => {
   // const context = useContext(alertContext);
@@ -13,8 +13,7 @@ const Register = () => {
     password: "",
     password2: "",
     email: "",
-    fname: "",
-    lname: "",
+    name: "",
   });
 
   const handleChange = (e) => {
@@ -26,26 +25,24 @@ const Register = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Request-Headers": "http://127.0.0.1:3000/"
+        "Access-Control-Request-Headers": "http://127.0.0.1:3000/",
       },
       body: JSON.stringify({
         username: credentials.username,
         password: credentials.password,
         password2: credentials.password2,
         email: credentials.email,
-        first_name: credentials.fname,
-        last_name: credentials.lname
+        name: credentials.name,
       }),
     });
     console.log(response);
     const json = await response.json();
     console.log(json);
-    if(response.ok)
-      navigate("/login");
+    if (response.ok) navigate("/login");
     else {
       // setdisplay("block");
       // showAlert({ type: "success", msg: "Successfully Signed up" });
-      console.log({status: response.status, message: response.statusText});
+      console.log({ status: response.status, message: response.statusText });
     }
     // if (!json.success) {
     //   showAlert({ type: "danger", msg: json.error });
@@ -58,9 +55,80 @@ const Register = () => {
   };
   return (
     <div className="register-main">
-      <Navbar />
-      <img src={pic} alt="" />
-      <div className="register">
+      <Navbar/> 
+      <div class="card">
+        <form onSubmit={handleSubmit}>
+          <h1>Sign Up</h1>
+          <div className="mb-3 form-item">
+            <label htmlFor="username" className="col-form-label">
+              Username
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="username"
+              name="username"
+              value={credentials.username}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-3 form-item">
+            <label htmlFor="exampleFormControlInput1" className="form-label">
+              Email address
+            </label>
+            <input
+              type="email"
+              className="form-control"
+              id="exampleFormControlInput1"
+              name="email"
+              value={credentials.email}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-3 form-item">
+            <label htmlFor="name" className="col-form-label">
+              Name
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="name"
+              name="name"
+              value={credentials.name}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-3 form-item">
+            <label htmlFor="inputPassword" className="col-form-label">
+              Password
+            </label>
+            <input
+              type="password"
+              className="form-control"
+              id="inputPassword"
+              name="password"
+              value={credentials.password}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-3 form-item">
+            <label htmlFor="inputPassword" className="col-form-label">
+              Password2
+            </label>
+            <input
+              type="password"
+              className="form-control"
+              id="inputPassword2"
+              name="password2"
+              value={credentials.password2}
+              onChange={handleChange}
+            />
+          </div>
+          <button type="submit">CREATE ACCOUNT</button>
+        </form>
+      </div>
+      {/* <div className="register">
+      <h1 id="reg-title">SIGN UP</h1>
       <form onSubmit={handleSubmit}>
       <div className="mb-3">
           <label htmlFor="username" className="col-form-label">
@@ -143,8 +211,8 @@ const Register = () => {
         <button type="submit" className="btn btn-primary">
           Submit
         </button>
-        </form>
-      </div>
+        </form> 
+      </div> */}
     </div>
   );
 };

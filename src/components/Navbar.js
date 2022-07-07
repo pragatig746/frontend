@@ -1,7 +1,16 @@
-import React from "react";
+import React,{useState} from "react";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const [register,setregister] = useState('Register')
+  const [login, setlogin] = useState('Login')
+  const vis = () =>{
+    if(props.visibilty==="1")
+    {
+      setregister('Profile');
+      setlogin('Logout');
+    }
+  }
   return (
     <div className="nbar">
       <nav className="navbar navbar-expand-sm navbar-dark">
@@ -42,12 +51,12 @@ const Navbar = () => {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/register">
-                  Register
+                  {register}
                 </Link>
               </li>
               <li className="nav-item" id="lastlink">
                 <Link className="nav-link" to="/login">
-                  Login
+                  {login}
                 </Link>
               </li>
             </ul>

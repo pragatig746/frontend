@@ -213,3 +213,12 @@
   color: white;
   box-shadow: rgba(55, 59, 61, 0.847) 0px 7px 29px 0px;
 }
+
+.r-card{
+  background-color: #9355db;
+  border-radius: 7%;
+}
+
+.container h1{
+  font-family: 'League Spartan', sans-serif;
+}

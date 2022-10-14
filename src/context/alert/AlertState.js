@@ -23,7 +23,7 @@ const AlertState = (props) => {
   return (
       <>
     <alertContext.Provider value={{showAlert, setdisplay}}>
-      <div style={{ height: "50px", display: display }}>
+      <div style={{ height: "4vmin", display: display}}>
         {alert && (
           <div
             className={`alert alert-${alert.type} alert-dismissible fade show`}

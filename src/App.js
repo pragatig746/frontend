@@ -1,88 +1,72 @@
-import './App.css';
-import Landingpage from './components/Landingpage';
-import { BrowserRouter,
-  Routes,
-  Route,} from 'react-router-dom';
-import About from './components/About';
-import Contact from './components/Contact';
-import Register from './components/Register';
-import Login from './components/Login';
-import Home from './components/Home';
-import Profile from './components/Profile';
-import Logout from './components/Logout';
-// import Navbar from './components/Navbar';
-
+import "./App.css";
+import Landingpage from "./components/Landingpage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Register from "./components/Register";
+import Login from "./components/Login";
+import Home from "./components/Home";
+import Profile from "./components/Profile";
+import Logout from "./components/Logout";
+import AlertState from "./context/alert/AlertState";
+import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <div className='main'>
+    <div className="main">
       <BrowserRouter>
-      <Routes>
+        <AlertState>
+          <Routes>
             <Route
               exact
               activeClassName="active"
               path="/"
-              element={
-                <Landingpage/>
-              }
+              element={<Landingpage />}
             />
             <Route
               exact
               activeClassName="active"
               path="/about"
-              element={
-                <About/>
-              }
+              element={<About />}
             />
             <Route
               exact
               activeClassName="active"
               path="/contact"
-              element={
-                <Contact/>
-              }
+              element={<Contact />}
             />
             <Route
               exact
               activeClassName="active"
               path="/register"
-              element={
-                <Register/>
-              }
+              element={<Register />}
             />
             <Route
               exact
               activeClassName="active"
               path="/login"
-              element={
-                <Login/>
-              }
+              element={<Login />}
             />
             <Route
               exact
               activeClassName="active"
               path="/home"
-              element={
-                <Home/>
-              }
+              element={<Home />}
             />
             <Route
               exact
               activeClassName="active"
               path="/profile"
-              element={
-                <Profile/>
-              }
+              element={<Profile />}
             />
             <Route
               exact
               activeClassName="active"
               path="/logout"
-              element={
-                <Logout/>
-              }
+              element={<Logout />}
             />
           </Routes>
+        </AlertState>
       </BrowserRouter>
     </div>
   );

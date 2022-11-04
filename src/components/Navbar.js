@@ -55,9 +55,6 @@ const Navbar = () => {
                 <Link className="nav-link" to="/about">
                   About
                 </Link>
-                <Link className="nav-link  pr-5" to="/contact">
-                  Contact
-                </Link>
                 <Link
                   className="nav-link"
                   to="/register"

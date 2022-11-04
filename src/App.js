@@ -9,6 +9,7 @@ import Home from "./components/Home";
 import Profile from "./components/Profile";
 import Logout from "./components/Logout";
 import AlertState from "./context/alert/AlertState";
+import Feedback from "./components/Feedback";
 import Navbar from './components/Navbar';
 
 function App() {
@@ -58,6 +59,12 @@ function App() {
               activeClassName="active"
               path="/profile"
               element={<Profile />}
+            />
+            <Route
+              exact
+              activeClassName="active"
+              path="/feedback"
+              element={<Feedback />}
             />
             <Route
               exact

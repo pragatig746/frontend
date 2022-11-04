@@ -250,3 +250,26 @@
   font-size: 20px;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+.feed-main h1{
+  text-align: center;
+  margin:auto;
+  align-items: center;
+  align-content: center;
+  padding: 4vmin;
+  font-size: 6vmin;
+  font-family: 'Courier New', Courier, monospace;
+  color: rgb(182, 181, 181);
+}
+.feed{
+  top: 10vmin;
+  height: 40vmin;
+  padding: 2vmin; 
+  margin: auto;
+  width: 78vmin;
+  border-radius: 10px;
+  background-color: rgb(250, 249, 246);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.feed:hover{
+  box-shadow: rgba(55, 59, 61, 0.847) 0px 7px 29px 0
+}
